@@ -1,20 +1,20 @@
-pipeline { 
-    agent any 
-    stages { 
-        stage('Build') { 
-            steps { 
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
                 sh 'npm install'
-                 } 
-                 }
-                  stage('Unit Test') { 
-                    steps {
-                         sh 'npm run unit-test'
-                          }
-                           }
-                            stage('Integration Test') {
-                                 steps { 
-                                    sh 'npm run integration-test' 
-                                    }
-                                      } 
-                                       }
-                                         }
+            }
+        }
+        stage('Unit Test') {
+            steps {
+                sh 'npm run test:unit'
+            }
+        }
+        stage('Integration Test') {
+            steps {
+                sh 'npm run test:integration'
+            }
+        }
+    }
+}
