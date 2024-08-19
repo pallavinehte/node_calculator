@@ -10,6 +10,8 @@ const numberCruncher = (calc) => {
   switch (operation) {
     case 'add':
       return x + y;
+    case 'xyz':
+      return x + y;
     case 'subtract':
       return x - y;
     case 'multiply':
